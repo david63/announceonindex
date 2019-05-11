@@ -1,0 +1,88 @@
+{% if S_ANNOUNCE_ENABLED %}
+	{% if S_ALLOW_GUESTS or S_USER_LOGGED_IN %}
+		{% INCLUDECSS '@david63_announceonindex/announceonindex.css' %}
+		{% INCLUDECSS '@david63_announceonindex/announceonindex_icons.css' %}
+
+		<div>
+		{% if topicrow %}
+			<div class="forabg">
+				<div class="inner">
+					<ul class="topiclist">
+						<li class="header">
+							<dl class="row-item">
+								<dt>
+									<div class="list-inner">{{ lang('ANNOUNCEMENTS') }}</div>
+								</dt>
+								<dd class="posts">{{ lang('REPLIES') }}</dd>
+								<dd class="views">{{ lang('VIEWS') }}</dd>
+								<dd class="lastpost"><span>{{ lang('LAST_POST') }}</span></dd>
+							</dl>
+						</li>
+					</ul>
+
+					<ul class="topiclist forums">
+		{% endif %}
+						{% if S_ALLOW_EVENTS %}
+							{% EVENT viewforum_body_topic_row_before %}
+						{% endif %}
+
+						{% for topic in topicrow %}
+
+							<li class="row{% if topic.S_ROW_COUNT is even %} bg1{% else %} bg2{% endif %}">
+
+							{% if S_ALLOW_EVENTS %}
+								{% EVENT viewforum_body_topic_row_prepend %}
+							{% endif %}
+
+							<dl class="row-item {{ topic.TOPIC_IMG_STYLE }}">
+								<dt<!-- IF topic.TOPIC_ICON_IMG and S_TOPIC_ICONS --> style="background-image: url({{ T_ICONS_PATH }}{{ topic.TOPIC_ICON_IMG }}); background-repeat: no-repeat;"{% endif %} title="{{ topic.TOPIC_FOLDER_IMG_ALT }}">
+								{% if topic.S_UNREAD_TOPIC and not S_IS_BOT %}<a href="{{ topic.U_NEWEST_POST }}" class="row-item-link"></a>{% endif %}
+									<div class="list-inner">
+										{% if S_ALLOW_EVENTS %}
+											{% EVENT topiclist_row_prepend %}
+										{% endif %}
+
+										{% if topic.S_UNREAD_TOPIC and not S_IS_BOT %}
+											<a class="unread" href="{{ topic.U_NEWEST_POST }}">
+												<i class="icon fa-file fa-fw icon-red icon-md" aria-hidden="true"></i><span class="sr-only">{{ NEW_POST }}</span>
+											</a>
+										{% endif %}
+										
+										<a href="{{ topic.U_VIEW_TOPIC }}" class="topictitle">{{ topic.TOPIC_TITLE }}</a><br />
+
+										{% if S_ALLOW_EVENTS %}
+											{% EVENT topiclist_row_topic_title_after %}
+										{% endif %}
+
+										{% if not S_IS_BOT %}
+											<div class="responsive-show" style="display: none;">
+												{{ lang('POST_BY_AUTHOR') }} {{ topic.TOPIC_AUTHOR_FULL }} &raquo; <a href="{{ topic.U_LAST_POST }}" title="{{ lang('GOTO_LAST_POST') }}">{{ topic.FIRST_POST_TIME }}</a>
+											</div>
+
+											<div class="topic-poster responsive-hide">
+												{% if topic.S_HAS_POLL %}<i class="icon fa-bar-chart fa-fw" aria-hidden="true"></i>{% endif %}
+												{% if topic.ATTACH_ICON_IMG %}<i class="icon fa-paperclip fa-fw" aria-hidden="true"></i>{% endif %}
+												{{ lang('POST_BY_AUTHOR') }} {{ topic.TOPIC_AUTHOR_FULL }} &raquo; {{ topic.FIRST_POST_TIME }}
+												{% if topic.S_POST_GLOBAL and FORUM_ID != topic.FORUM_ID %} &raquo; {{ lang('IN') }} <a href="{{ opic.U_VIEW_FORUM }}">{{ topic.FORUM_NAME }}</a>{% endif %}
+											</div>
+
+								</dt>
+											<dd class="posts">{{ topic.REPLIES }} <dfn>{{ lang('REPLIES') }}</dfn></dd>
+											<dd class="views">{{ topic.VIEWS }} <dfn>{{ lang('VIEWS') }}</dfn></dd>
+											<dd class="lastpost"><span><dfn>{{ lang('LAST_POST') }} </dfn>
+											{% if S_SHOW_LAST_AVATAR %}
+												<span class="announce-avatar">{{ topic.LAST_AUTHOR_AVATAR }}</span>
+											{% endif %}
+											{{ lang('POST_BY_AUTHOR') }} {{ topic.TOPIC_LAST_AUTHOR }}
+												<a href="{{ topic.U_LAST_POST }}" title="{{ lang('GOTO_LAST_POST') }}">{{ LAST_POST_IMG }}</a><br />{{ topic.LAST_POST_TIME }}</span>
+											</dd>
+									</div>
+										{% endif %}
+							</dl>
+						</li>
+					{% endfor %}
+					</ul>
+				</div>
+			</div>
+	{% endif %}
+{% endif %}

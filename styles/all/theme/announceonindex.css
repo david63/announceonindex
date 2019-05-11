@@ -1,0 +1,36 @@
+/**
+* announceonindex.css
+**/
+
+.announce-avatar img {
+	border: 1px solid #fff;
+	display: inline-block;
+	margin-right: 4px;
+	float: left;
+}
+
+.rtl .announce-avatar img {
+	margin-right: 0px;
+	margin-left: 4px;
+	float: right;
+}
+
+
+/* Need this fix for styles that do not have these defined*/
+dl.row-item {
+	background-position: 10px 50%;
+	background-repeat: no-repeat;
+}
+
+dl.row-item dt .list-inner {
+	padding-left: 45px;
+}
+
+.rtl dl.row-item{
+	background-position: 99.5% 50%;
+}
+
+.rtl dl.row-item dt .list-inner {
+	padding-left: 5px;
+	padding-right: 45px;
+}

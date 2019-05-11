@@ -1,0 +1,13 @@
+/**
+* announceonindex_icons.css
+**/
+
+/* Forum icons & Topic icons */
+.global_a_read				{ background-image: url("images/global_read.gif"); }
+.global_a_read_mine			{ background-image: url("images/global_read_mine.gif"); }
+.global_a_read_locked			{ background-image: url("images/global_read_locked.gif"); }
+.global_a_read_locked_mine	{ background-image: url("images/global_read_locked_mine.gif"); }
+.global_a_unread				{ background-image: url("images/global_unread.gif"); }
+.global_a_unread_mine			{ background-image: url("images/global_unread_mine.gif"); }
+.global_a_unread_locked		{ background-image: url("images/globalannounce_unread_locked.gif"); }
+.global_a_unread_locked_mine	{ background-image: url("images/global_unread_locked_mine.gif"); }
