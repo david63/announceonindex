@@ -1,5 +1,4 @@
-{% include 'overall_header.html' %}
-{% include '@david63_announceonindex/head_panel.html' %}
+{% include '@' ~ NAMESPACE ~ '/head_panel.html' %}
 
 <form id="announceonindex" method="post" action="{{ U_ACTION }}">
 	<fieldset>
@@ -16,7 +15,7 @@
 		</dl>
 
 		<dl>
-			<dt><label for="announce_global_on_index">{{ lang('SHOW_GLOBALS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SHOW_GLOBALS_EXPLAIN') }}</span></dt>
+			<dt><label for="announce_global_on_index">{{ lang('SHOW_GLOBALS') }}{{ lang('COLON') }}</label><br><span>{{ lang('SHOW_GLOBALS_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="announce_global_on_index1" name="announce_global_on_index" value="1"{% if SHOW_GLOBALS %} checked="checked"{% endif %} />
 				<label class="set" for="announce_global_on_index1">{{ lang('YES') }}</label>
@@ -26,7 +25,7 @@
 		</dl>
 
 		<dl>
-			<dt><label for="announce_global_on_index">{{ lang('SHOW_GLOBAL_ICON') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SHOW_GLOBAL_ICON_EXPLAIN') }}</span></dt>
+			<dt><label for="announce_global_on_index">{{ lang('SHOW_GLOBAL_ICON') }}{{ lang('COLON') }}</label><br><span>{{ lang('SHOW_GLOBAL_ICON_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="announce_global_icon_on_index1" name="announce_global_icon_on_index" value="1"{% if SHOW_GLOBAL_ICON %} checked="checked"{% endif %} />
 				<label class="set" for="announce_global_icon_on_index1">{{ lang('YES') }}</label>
@@ -36,7 +35,7 @@
 		</dl>
 
 		<dl>
-			<dt><label for="announce_announcement_on_index">{{ lang('SHOW_ANNOUNCEMENTS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('SHOW_ANNOUNCEMENTS_EXPLAIN') }}</span></dt>
+			<dt><label for="announce_announcement_on_index">{{ lang('SHOW_ANNOUNCEMENTS') }}{{ lang('COLON') }}</label><br><span>{{ lang('SHOW_ANNOUNCEMENTS_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="announce_announcement_on_index1" name="announce_announcement_on_index" value="1"{% if SHOW_ANNOUNCEMENTS %} checked="checked"{% endif %} />
 				<label class="set" for="announce_announcement_on_index1">{{ lang('YES') }}</label>
@@ -46,7 +45,7 @@
 		</dl>
 
 		<dl>
-			<dt><label for="announce_guest">{{ lang('ALLOW_GUESTS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('ALLOW_GUESTS_EXPLAIN') }}</span></dt>
+			<dt><label for="announce_guest">{{ lang('ALLOW_GUESTS') }}{{ lang('COLON') }}</label><br><span>{{ lang('ALLOW_GUESTS_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="announce_guest1" name="announce_guest" value="1"{% if ALLOW_GUESTS %} checked="checked"{% endif %} />
 				<label class="set" for="announce_guest1">{{ lang('YES') }}</label>
@@ -66,14 +65,14 @@
 		</dl>
 
 		<dl>
-			<dt><label for="announce_avatar_size">{{ lang('ANNOUNCE_AVATAR_SIZE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('ANNOUNCE_AVATAR_SIZE_EXPLAIN') }}</span></dt>
+			<dt><label for="announce_avatar_size">{{ lang('ANNOUNCE_AVATAR_SIZE') }}{{ lang('COLON') }}</label><br><span>{{ lang('ANNOUNCE_AVATAR_SIZE_EXPLAIN') }}</span></dt>
 			<dd>
 				<input class="textbox" id="announce_avatar_size" type="number" maxlength="2" name="announce_avatar_size" value="{{ ANNOUNCE_AVATAR_SIZE }}" min="1" max="99" />
 			</dd>
 		</dl>
 
 		<dl>
-			<dt><label for="announce_event">{{ lang('ALLOW_EVENTS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('ALLOW_EVENTS_EXPLAIN') }}</span></dt>
+			<dt><label for="announce_event">{{ lang('ALLOW_EVENTS') }}{{ lang('COLON') }}</label><br><span>{{ lang('ALLOW_EVENTS_EXPLAIN') }}</span></dt>
 			<dd>
 				<input type="radio" id="announce_event1" name="announce_event" value="1"{% if ALLOW_EVENTS %} checked="checked"{% endif %} />
 				<label class="set" for="announce_event1">{{ lang('YES') }}</label>
@@ -93,5 +92,4 @@
 	</fieldset>
 </form>
 
-{% include '@david63_announceonindex/donate.html' %}
-{% include 'overall_footer.html' %}
+{% include '@' ~ NAMESPACE ~ '/donate.html' %}

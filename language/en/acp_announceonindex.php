@@ -38,7 +38,7 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 	'ALLOW_EVENTS'					=> 'Allow template events',
-	'ALLOW_EVENTS_EXPLAIN'			=> 'Allow the use of template events in the announcements.<br />Turn this off if other template events are causing problems and/or undesirable results.',
+	'ALLOW_EVENTS_EXPLAIN'			=> 'Allow the use of template events in the announcements.<br>Turn this off if other template events are causing problems and/or undesirable results.',
 	'ALLOW_GUESTS'					=> 'Allow guests to see announcements',
 	'ALLOW_GUESTS_EXPLAIN'			=> 'Allow guests to see the announcements.',
 
@@ -49,10 +49,13 @@ $lang = array_merge($lang, array(
 	'ANNOUNCE_ON_INDEX_EXPLAIN' 	=> 'Manage the announcement options.',
 	'ANNOUNCE_ON_INDEX_OPTIONS'		=> 'Announcement options',
 
+	'NEW_VERSION'					=> 'New Version',
+	'NEW_VERSION_EXPLAIN'			=> 'There is a newer version of this extension available.',
+
 	'SHOW_ANNOUNCEMENTS'			=> 'Show announcements',
 	'SHOW_ANNOUNCEMENTS_EXPLAIN'	=> 'Display announcements on the index page.',
 	'SHOW_GLOBAL_ICON'				=> 'Show global topic icon',
-	'SHOW_GLOBAL_ICON_EXPLAIN'		=> 'Display global topic icon when the announcement is a global announcement.<br /><strong>You may need to turn this off if there are no global topic icons for your style.</strong>',
+	'SHOW_GLOBAL_ICON_EXPLAIN'		=> 'Display global topic icon when the announcement is a global announcement.<br><strong>You may need to turn this off if there are no global topic icons for your style.</strong>',
 	'SHOW_GLOBALS'					=> 'Show global announcements',
 	'SHOW_GLOBALS_EXPLAIN'			=> 'Display global announcements on the index page.',
 
