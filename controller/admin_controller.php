@@ -103,7 +103,7 @@ class admin_controller implements admin_interface
 			$this->set_options();
 
 			// Add option settings change action to the admin log
-			$this->log->add('admin', $this->user->data['user_id'], $this->user->ip, 'GLOBAL_ON_INDEX_LOG');
+			$this->log->add('admin', $this->user->data['user_id'], $this->user->ip, 'ANNOUNCE_ON_INDEX_LOG');
 
 			// Option settings have been updated and logged
 			// Confirm this to the user and provide link back to previous page
