@@ -9,7 +9,6 @@
 
 namespace david63\announceonindex\controller;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use phpbb\config\config;
 use phpbb\request\request;
 use phpbb\template\template;
@@ -54,7 +53,7 @@ class admin_controller implements admin_interface
 	* @param \phpbb\request\request					$request	Request object
 	* @param \phpbb\template\template				$template	Template object
 	* @param \phpbb\user							$user		User object
-	* @param phpbb\language\language				$language	Language object
+	* @param \phpbb\language\language				$language	Language object
 	* @param \phpbb\log\log							$log		Log object
 	* @param \david63\creditspage\core\functions	functions	Functions for the extension
 	*

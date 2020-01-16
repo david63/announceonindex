@@ -192,8 +192,8 @@ class main_controller implements main_interface
 
 					$unread_topic = (isset($topic_tracking_info[$topic_id]) && $row['topic_last_post_time'] > $topic_tracking_info[$topic_id]) ? true : false;
 
-            		// Grab icons
-            		$icons = $this->cache->obtain_icons();
+					// Grab icons
+					$icons = $this->cache->obtain_icons();
 
 					$folder_img = $folder_alt = '';
 					if ($row['topic_type'] == POST_GLOBAL && $this->config['announce_global_icon_on_index'])
@@ -226,9 +226,9 @@ class main_controller implements main_interface
 						'TOPIC_FOLDER_IMG_ALT'	=> $this->language->lang($folder_alt),
 						'TOPIC_ICON_IMG'		=> (!empty($icons[$row['icon_id']])) ? $icons[$row['icon_id']]['img'] : '',
 						'TOPIC_IMG_STYLE'		=> $folder_img,
-		        		'TOPIC_LAST_AUTHOR'		=> get_username_string('full', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']),
+						'TOPIC_LAST_AUTHOR'		=> get_username_string('full', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']),
 						'TOPIC_TITLE'			=> censor_text($row['topic_title']),
-	            		'VIEWS'					=> $row['topic_views'],
+						'VIEWS'					=> $row['topic_views'],
 
 						'S_UNREAD'				=> $unread_topic,
 
