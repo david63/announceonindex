@@ -27,8 +27,8 @@ matrix:
 
 env:
     global:
-        - EXTNAME="david63/resetregdate"
-        - GITREPO="david63/resetregdate"
+        - EXTNAME="david63/announceonindex"
+        - GITREPO="david63/announceonindex"
         - SNIFF="1"                       # Should we run code sniffer on your code?
         - IMAGE_ICC="1"                   # Should we run icc profile sniffer on your images?
         - EPV="1"                         # Should we run EPV (Extension Pre Validator) on your code?
