@@ -7,10 +7,11 @@ Displays announcements on the index page.
 [![Latest Stable Version](https://poser.pugx.org/david63/announceonindex/v/stable)](https://packagist.org/packages/david63/announceonindex)
 [![Latest Unstable Version](https://poser.pugx.org/david63/announceonindex/v/unstable)](https://packagist.org/packages/david63/announceonindex)
 [![Total Downloads](https://poser.pugx.org/david63/announceonindex/downloads)](https://packagist.org/packages/david63/announceonindex)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/59902be2665c476dbd7951858c9ff769)](https://www.codacy.com/manual/david63/announceonindex?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=david63/announceonindex&amp;utm_campaign=Badge_Grade)
 
 ## Minimum Requirements
-* phpBB 3.2.0
-* PHP 5.4
+* phpBB 3.3.0
+* PHP 7.1.3
 
 ## Install
 1. [Download the latest release](https://github.com/david63/announceonindex/archive/3.2.zip) and unzip it.
@@ -30,4 +31,4 @@ Displays announcements on the index page.
 ## License
 [GNU General Public License v2](http://opensource.org/licenses/GPL-2.0)
 
-© 2019 - David Wood
+© 2020 - David Wood
