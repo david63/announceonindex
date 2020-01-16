@@ -1,6 +1,3 @@
-imports:
-    - { resource: phpbb_tables.yml }
-
 services:
     david63.announceonindex.listener:
         class: david63\announceonindex\event\listener

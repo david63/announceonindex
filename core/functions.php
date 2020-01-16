@@ -67,23 +67,47 @@ class functions
 	*/
 	public function version_check()
 	{
-		$md_manager 	= $this->ext_manager->create_extension_metadata_manager($this->get_ext_namespace());
-		$versions 		= $this->ext_manager->version_check($md_manager, true);
-		$new_version	= (array_key_exists('current', $versions) ? $versions['current'] : false);
+		$port = ($this->get_meta('ssl')) ? 443 : 80;
 
-		return $new_version;
+		// Can we access the version srver?
+		if (@fsockopen(($port == 443 ? 'ssl://' : '') . $this->get_meta('host'), $port, $errno, $errstr, 2))
+		{
+			try
+			{
+				$md_manager 	= $this->ext_manager->create_extension_metadata_manager($this->get_ext_namespace());
+				$version_data	= $this->ext_manager->version_check($md_manager, true);
+			}
+			catch (version_check_exception $e)
+			{
+				$version_data['current'] = 'fail';
+			}
+		}
+		else
+		{
+			$version_data['current'] = 'fail';
+		}
+
+		return $version_data;
 	}
 
 	/**
-	* Get the version number of this extension
+	* Get a meta_data key value
 	*
 	* @return $meta_data
 	* @access public
 	*/
-	public function get_this_version()
+	public function get_meta($data)
 	{
+		$meta_data	= '';
 		$md_manager = $this->ext_manager->create_extension_metadata_manager($this->get_ext_namespace());
-		$meta_data	= $md_manager->get_metadata('version');
+
+		foreach (new \RecursiveIteratorIterator(new \RecursiveArrayIterator($md_manager->get_metadata('all'))) as $key => $value)
+		{
+	    	if ($data === $key)
+			{
+				$meta_data = $value;
+			}
+		}
 
 		return $meta_data;
 	}

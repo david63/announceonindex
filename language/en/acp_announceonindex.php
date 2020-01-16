@@ -45,12 +45,15 @@ $lang = array_merge($lang, array(
 	'ANNOUNCE_AVATAR'				=> 'Show last poster’s avatar',
 	'ANNOUNCE_AVATAR_SIZE'			=> 'Avatar size',
 	'ANNOUNCE_AVATAR_SIZE_EXPLAIN'	=> 'The size of the last poster’s avatar',
+	'ANNOUNCE_ON_INDEX'				=> 'Announcements on index',
 	'ANNOUNCE_ON_INDEX_ENABLE'		=> 'Enable announcements',
 	'ANNOUNCE_ON_INDEX_EXPLAIN' 	=> 'Manage the announcement options.',
 	'ANNOUNCE_ON_INDEX_OPTIONS'		=> 'Announcement options',
 
-	'NEW_VERSION'					=> 'New Version',
-	'NEW_VERSION_EXPLAIN'			=> 'There is a newer version of this extension available.',
+	'NEW_VERSION'					=> 'New Version - %s',
+	'NEW_VERSION_EXPLAIN'			=> 'Version %1$s of this extension is now available for download.<br>%2$s',
+	'NEW_VERSION_LINK'				=> 'Download here',
+	'NO_VERSION_EXPLAIN'			=> 'Version update information is not available.',
 
 	'SHOW_ANNOUNCEMENTS'			=> 'Show announcements',
 	'SHOW_ANNOUNCEMENTS_EXPLAIN'	=> 'Display announcements on the index page.',

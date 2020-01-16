@@ -23,12 +23,21 @@ class ext extends base
 	*/
 	public function is_enableable()
 	{
-		$is_enableable = phpbb_version_compare(PHPBB_VERSION, '3.2.0', '>=');
+		// Requires phpBB 3.3.0 or newer.
+		$is_enableable = phpbb_version_compare(PHPBB_VERSION, '3.3.0', '>=');
 
+		// Display a custom warning message if requirement fails.
 		if (!$is_enableable)
 		{
-			$this->container->get('language')->add_lang('ext_announceonindex', 'david63/announceonindex');
-			trigger_error($this->container->get('language')->lang('VERSION_32') . adm_back_link(append_sid('index.' . $this->container->getParameter('core.php_ext'), 'i=acp_extensions&amp;mode=main')), E_USER_WARNING);
+			// Need to cater for 3.1 and 3.2
+			if (phpbb_version_compare(PHPBB_VERSION, '3.2.0', '>='))
+			{
+				$this->container->get('language')->add_lang('ext_enable_error', 'david63/announceonindex');
+			}
+			else
+			{
+				$this->container->get('user')->add_lang_ext('david63/announceonindex', 'ext_enable_error');
+			}
 		}
 
 		return $is_enableable;

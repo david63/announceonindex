@@ -272,7 +272,7 @@ Pagination
 /* ---------
 Panels
 --------- */
-.head-panel, .head-panel-error, .head-panel-version {
+.head-panel, .head-panel-error, .head-panel-version, .head-panel-noversion {
 	width: auto;
 	height: auto;
 	border-radius: 1em;
@@ -289,7 +289,7 @@ Panels
 	background-color: #ffffff;
 }
 
-.head-panel-error, .head-panel-version {
+.head-panel-error, .head-panel-version, .head-panel-noversion {
 	color: #FFFFFF;
 	text-align: center;
 }
@@ -300,6 +300,10 @@ Panels
 
 .head-panel-version {
 	background-color: #228822;
+}
+
+.head-panel-noversion {
+	background-color: #6B6BFF;
 }
 
 .head-title {
