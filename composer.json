@@ -2,7 +2,7 @@
 	"name": "david63/announceonindex",
 	"type": "phpbb-extension",
 	"description": "Displays announcements on the index page.",
-	"version": "3.1.0-RC1",
+	"version": "3.1.0",
 	"time": "2020-01-16",
 	"keywords":
 	[

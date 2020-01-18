@@ -10,6 +10,7 @@
 namespace david63\announceonindex\core;
 
 use phpbb\extension\manager;
+use phpbb\exception\version_check_exception;
 
 /**
 * functions
@@ -67,15 +68,24 @@ class functions
 	*/
 	public function version_check()
 	{
-		$port = ($this->get_meta('ssl')) ? 443 : 80;
+		if ($this->get_meta('host') == 'www.phpbb.com')
+		{
+			$port 	= 'https://';
+			$stable	= NULL;
+		}
+		else
+		{
+			$port 	= 'http://';
+			$stable = 'unstable';
+		}
 
 		// Can we access the version srver?
-		if (@fsockopen(($port == 443 ? 'ssl://' : '') . $this->get_meta('host'), $port, $errno, $errstr, 2))
+		if (@fopen($port . $this->get_meta('host') . $this->get_meta('directory') . '/' . $this->get_meta('filename'), 'r'))
 		{
 			try
 			{
 				$md_manager 	= $this->ext_manager->create_extension_metadata_manager($this->get_ext_namespace());
-				$version_data	= $this->ext_manager->version_check($md_manager, true);
+				$version_data	= $this->ext_manager->version_check($md_manager, true, false, $stable);
 			}
 			catch (version_check_exception $e)
 			{
@@ -103,7 +113,7 @@ class functions
 
 		foreach (new \RecursiveIteratorIterator(new \RecursiveArrayIterator($md_manager->get_metadata('all'))) as $key => $value)
 		{
-			if ($data === $key)
+	    	if ($data === $key)
 			{
 				$meta_data = $value;
 			}
