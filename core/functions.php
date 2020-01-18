@@ -71,7 +71,7 @@ class functions
 		if ($this->get_meta('host') == 'www.phpbb.com')
 		{
 			$port 	= 'https://';
-			$stable	= NULL;
+			$stable	= null;
 		}
 		else
 		{
@@ -113,7 +113,7 @@ class functions
 
 		foreach (new \RecursiveIteratorIterator(new \RecursiveArrayIterator($md_manager->get_metadata('all'))) as $key => $value)
 		{
-	    	if ($data === $key)
+			if ($data === $key)
 			{
 				$meta_data = $value;
 			}
