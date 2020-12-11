@@ -123,7 +123,7 @@ class admin_controller
 		$this->template->assign_vars(array(
 			'DOWNLOAD'			=> (array_key_exists('download', $version_data)) ? '<a class="download" href =' . $version_data['download'] . '>' . $this->language->lang('NEW_VERSION_LINK') . '</a>' : '',
 
- 			'EXT_IMAGE_PATH'	=> $this->ext_images_path,
+			'EXT_IMAGE_PATH'	=> $this->ext_images_path,
 
 			'HEAD_TITLE'		=> $this->language->lang('ANNOUNCE_ON_INDEX'),
 			'HEAD_DESCRIPTION'	=> $this->language->lang('ANNOUNCE_ON_INDEX_EXPLAIN'),
