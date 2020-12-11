@@ -1,40 +1,26 @@
+imports:
+    - { resource: alias.yml }
+
 services:
+    _defaults:
+        autowire: true
+        bind:
+            $root_path: '%core.root_path%'
+            $php_ext: '%core.php_ext%'
+            $tables: '%tables%'
+            $ext_images_path: '%core.root_path%ext/david63/autodbbackup/adm/style/images'			
+        public: true			
+
     david63.announceonindex.listener:
         class: david63\announceonindex\event\listener
-        arguments:
-            - '@david63.announceonindex.main.controller'
         tags:
             - { name: event.listener }
 
     david63.announceonindex.main.controller:
         class: david63\announceonindex\controller\main_controller
-        arguments:
-            - '@config'
-            - '@template'
-            - '@user'
-            - '@dbal.conn'
-            - '%core.root_path%'
-            - '%core.php_ext%'
-            - '@content.visibility'
-            - '@auth'
-            - '@cache'
-            - '@path_helper'
-            - '@language'
-            - '@david63.announceonindex.core.functions'			
-            - '%tables%'
 
     david63.announceonindex.admin.controller:
         class: david63\announceonindex\controller\admin_controller
-        arguments:
-            - '@config'
-            - '@request'
-            - '@template'
-            - '@user'
-            - '@language'
-            - '@log'
-            - '@david63.announceonindex.core.functions'
 
     david63.announceonindex.core.functions:
         class: david63\announceonindex\core\functions
-        arguments:
-            - '@ext.manager'

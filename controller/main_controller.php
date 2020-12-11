@@ -20,7 +20,7 @@ use phpbb\path_helper;
 use phpbb\language\language;
 use david63\announceonindex\core\functions;
 
-class main_controller implements main_interface
+class main_controller
 {
 	/** @var \phpbb\config\config */
 	protected $config;
@@ -81,7 +81,7 @@ class main_controller implements main_interface
 	* @return \david63\announceonindex\controller\main_controller
 	* @access public
 	*/
-	public function __construct(config $config, template $template, user $user, driver_interface $db, $root_path, $php_ext, content_visibility $content_visibility, auth $auth, service $cache, path_helper $path_helper, language $language, functions $functions, $tables)
+	public function __construct(config $config, template $template, user $user, driver_interface $db, string $root_path, string $php_ext, content_visibility $content_visibility, auth $auth, service $cache, path_helper $path_helper, language $language, functions $functions, array $tables)
 	{
 		$this->config				= $config;
 		$this->template				= $template;
@@ -146,7 +146,7 @@ class main_controller implements main_interface
 
 			if ($g_forum_id)
 			{
-				$topic_list	= $rowset = array();
+				$topic_list	= $rowset = [];
 				$sql_where 	= POST_GLOBAL;
 
 				if ($this->config['announce_announcement_on_index'])
@@ -173,7 +173,7 @@ class main_controller implements main_interface
 				}
 				$this->db->sql_freeresult($result);
 
-				$topic_tracking_info = array();
+				$topic_tracking_info = [];
 				if ($this->config['load_db_lastread'] && $this->user->data['is_registered'])
 				{
 					$topic_tracking_info = get_topic_tracking(0, $topic_list, $rowset, false, $topic_list);

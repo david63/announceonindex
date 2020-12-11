@@ -1,9 +1,9 @@
 <?php
 /**
 *
-* @package Announcements on index
-* @copyright (c) 2015 david63
-* * @license GNU General Public License, version 2 (GPL-2.0)
+* @package ACP User Notifications
+* @copyright (c) 2020 david63
+* @license GNU General Public License, version 2 (GPL-2.0)
 *
 */
 
@@ -17,7 +17,7 @@ if (!defined('IN_PHPBB'))
 
 if (empty($lang) || !is_array($lang))
 {
-	$lang = array();
+	$lang = [];
 }
 
 // DEVELOPERS PLEASE NOTE
@@ -36,19 +36,23 @@ if (empty($lang) || !is_array($lang))
 // ’ » “ ” …
 //
 
-
 $lang = array_merge($lang, array(
+	'CLICK_DONATE'				=> 'Click here to donate',
+
 	'DONATE'					=> 'Donate',
 	'DONATE_EXTENSIONS'			=> 'Donate to my extensions',
-	'DONATE_EXTENSIONS_EXPLAIN'	=> 'This extension, as with all of my extensions, is totally free of charge. If you have benefited from using it then please consider making a donation by clicking the PayPal donation button opposite - I would appreciate it. I promise that there will be no spam nor requests for further donations, although they would always be welcome.',
+	'DONATE_EXTENSIONS_EXPLAIN'	=> 'This extension, as with all of my extensions, is totally free of charge. If you have benefited from using it then please consider making a donation by clicking the PayPal donation button, or use the “Scan, Pay, Go” QR image, opposite - I would appreciate it.<br><br>I promise that there will be no spam nor requests for further donations, although they would always be welcome.',
 
 	'NEW_VERSION'				=> 'New Version - %s',
 	'NEW_VERSION_EXPLAIN'		=> 'Version %1$s of this extension is now available for download.<br>%2$s',
 	'NEW_VERSION_LINK'			=> 'Download here',
+	'NO_JS'						=> 'You appear to have javascript disabled.<br>Please <a href="https://enablejavascript.co/">enable</a> it in your browser to be able to take advantage of all the features on this page.',
 	'NO_VERSION_EXPLAIN'		=> 'Version update information is not available.',
 
 	'PAYPAL_BUTTON'				=> 'Donate with PayPal button',
 	'PAYPAL_TITLE'				=> 'PayPal - The safer, easier way to pay online!',
+	'PHP_NOT_VALID'				=> 'Your version of PHP is not compatible with this extension.',
+	'PHPBB_NOT_VALID'			=> 'Your version of phpBB is not compatible with this extension.',
 
 	'VERSION'					=> 'Version',
 ));

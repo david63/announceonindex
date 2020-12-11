@@ -2,8 +2,8 @@
 	"name": "david63/announceonindex",
 	"type": "phpbb-extension",
 	"description": "Displays announcements on the index page.",
-	"version": "3.1.0",
-	"time": "2020-01-16",
+	"version": "3.1.1-RC1",
+	"time": "2020-12-11",
 	"keywords":
 	[
 		"phpbb",
@@ -25,14 +25,15 @@
         "php": ">=7.1.3"
     },
 	"extra": {
-		"display-name": "[**] Announcements on index",
+		"display-name": "Announcements on index",
 		"soft-require": {
-			"phpbb/phpbb": ">=3.3.0"
+			"phpbb/phpbb": ">=3.3.0,<4.0.0@dev"
       },
 	  "version-check": {
-      	"host": "www.phpbb.com",
-        "directory": "/customise/db/extension/announcement_on_index",
-        "filename": "version_check"
-	  }
+        	"host": "version.phpbbdev.space",
+        	"directory": "/versions",
+        	"filename": "announce_on_index_version_file.json",
+			"ssl": false
+    	}
 	}
 }

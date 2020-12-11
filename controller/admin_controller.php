@@ -20,7 +20,7 @@ use david63\announceonindex\core\functions;
 /**
 * Admin controller
 */
-class admin_controller implements admin_interface
+class admin_controller
 {
 	/** @var \phpbb\config\config */
 	protected $config;
@@ -43,32 +43,37 @@ class admin_controller implements admin_interface
 	/** @var \david63\announceonindex\core\functions */
 	protected $functions;
 
+	/** @var string */
+	protected $ext_images_path;
+
 	/** @var string Custom form action */
 	protected $u_action;
 
 	/**
 	* Constructor for admin controller
 	*
-	* @param \phpbb\config\config					$config		Config object
-	* @param \phpbb\request\request					$request	Request object
-	* @param \phpbb\template\template				$template	Template object
-	* @param \phpbb\user							$user		User object
-	* @param \phpbb\language\language				$language	Language object
-	* @param \phpbb\log\log							$log		Log object
-	* @param \david63\creditspage\core\functions	functions	Functions for the extension
+	* @param \phpbb\config\config					$config				Config object
+	* @param \phpbb\request\request					$request			Request object
+	* @param \phpbb\template\template				$template			Template object
+	* @param \phpbb\user							$user				User object
+	* @param \phpbb\language\language				$language			Language object
+	* @param \phpbb\log\log							$log				Log object
+	* @param \david63\creditspage\core\functions	functions			Functions for the extension
+	* @param string                                 $ext_images_path    Path to this extension's images
 	*
 	* @return \david63\announceonindex\controller\admin_controller
 	* @access public
 	*/
-	public function __construct(config $config, request $request, template $template, user $user, language $language, log $log, functions $functions)
+	public function __construct(config $config, request $request, template $template, user $user, language $language, log $log, functions $functions, string $ext_images_path)
 	{
-		$this->config		= $config;
-		$this->request		= $request;
-		$this->template		= $template;
-		$this->user			= $user;
-		$this->language		= $language;
-		$this->log			= $log;
-		$this->functions	= $functions;
+		$this->config			= $config;
+		$this->request			= $request;
+		$this->template			= $template;
+		$this->user				= $user;
+		$this->language			= $language;
+		$this->log				= $log;
+		$this->functions		= $functions;
+		$this->ext_images_path	= $ext_images_path;
 	}
 
 	/**
@@ -80,8 +85,7 @@ class admin_controller implements admin_interface
 	public function display_options()
 	{
 		// Add the language files
-		$this->language->add_lang('acp_announceonindex', $this->functions->get_ext_namespace());
-		$this->language->add_lang('acp_common', $this->functions->get_ext_namespace());
+		$this->language->add_lang(array('acp_announceonindex', 'acp_common'), $this->functions->get_ext_namespace());
 
 		// Create a form key for preventing CSRF attacks
 		$form_key = 'announce_on_index';
@@ -113,13 +117,21 @@ class admin_controller implements admin_interface
 		// Template vars for header panel
 		$version_data	= $this->functions->version_check();
 
+		// Are the PHP and phpBB versions valid for this extension?
+		$valid = $this->functions->ext_requirements();
+
 		$this->template->assign_vars(array(
-			'DOWNLOAD'			=> (array_key_exists('download', $version_data)) ? '<a href =' . $version_data['download'] . '>' . $this->language->lang('NEW_VERSION_LINK') . '</a>' : '',
+			'DOWNLOAD'			=> (array_key_exists('download', $version_data)) ? '<a class="download" href =' . $version_data['download'] . '>' . $this->language->lang('NEW_VERSION_LINK') . '</a>' : '',
+
+ 			'EXT_IMAGE_PATH'	=> $this->ext_images_path,
 
 			'HEAD_TITLE'		=> $this->language->lang('ANNOUNCE_ON_INDEX'),
 			'HEAD_DESCRIPTION'	=> $this->language->lang('ANNOUNCE_ON_INDEX_EXPLAIN'),
 
 			'NAMESPACE'			=> $this->functions->get_ext_namespace('twig'),
+
+			'PHP_VALID' 		=> $valid[0],
+			'PHPBB_VALID' 		=> $valid[1],
 
 			'S_BACK'			=> $back,
 			'S_VERSION_CHECK'	=> (array_key_exists('current', $version_data)) ? $version_data['current'] : false,

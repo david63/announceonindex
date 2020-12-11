@@ -1,7 +1,7 @@
 <?php
 /**
 *
-* @package Copy New Topic Extension
+* @package Auto db Backup
 * @copyright (c) 2016 david63
 * @license GNU General Public License, version 2 (GPL-2.0)
 *
@@ -17,7 +17,7 @@ if (!defined('IN_PHPBB'))
 
 if (empty($lang) || !is_array($lang))
 {
-	$lang = array();
+	$lang = [];
 }
 
 /// DEVELOPERS PLEASE NOTE
@@ -37,7 +37,7 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, [
-	'EXT_ENABLE_ERROR' => 'This extension requires phpBB 3.3.0 (or greater).',
+	'EXT_ENABLE_ERROR' => 'This extension requires phpBB 3.2.0 (or greater).',
 ]);
 
 /**

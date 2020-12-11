@@ -18,11 +18,31 @@
 	<br>
 </div>
 
-{% if S_ERROR %}
+{% if not PHP_VALID %}
 	<div class="head-panel-error">
-		<div class="head-title">{{ ERROR_TITLE }}</div>
-		<div class="head-description">{{ ERROR_DESCRIPTION }}</div>
+		{{ lang('PHP_NOT_VALID') }}
 	</div>
+{% endif %}
+
+{% if not PHPBB_VALID %}
+	<div class="head-panel-error">
+		{{ lang('PHPBB_NOT_VALID') }}
+	</div>
+{% endif %}
+
+{% if PHP_VALID and PHPBB_VALID %}
+	<noscript>
+		<div class="head-panel-error">
+			{{ lang('NO_JS') }}
+		</div>
+	</noscript>
+
+	{% if S_ERROR %}
+		<div class="head-panel-error">
+			<div class="head-title">{{ ERROR_TITLE }}</div>
+			<div class="head-description">{{ ERROR_DESCRIPTION }}</div>
+		</div>
+	{% endif %}
 {% endif %}
 
 {% if S_VERSION_CHECK %}

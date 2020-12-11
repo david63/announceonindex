@@ -357,6 +357,13 @@ Panels
 	font-size: 0.90em;
 }
 
+.head-description .download {
+	color: #FFFF66;
+	text-decoration: none;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
 fieldset {
 	border-radius: 1em;
 	box-shadow: 0.15em 0.2em 0 0 #899599;
@@ -681,6 +688,22 @@ PayPal button
 	font-family: FontAwesome;
 	padding-right: 10px;
 	font-size: 24px;
+}
+
+.qrimage {
+	display: block;
+	margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    width: 200px;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.donate-content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
 }
 
 
