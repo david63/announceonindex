@@ -2,11 +2,12 @@
 
 Displays announcements on the index page.
 
-[![Build Status](https://travis-ci.com/david63/announceonindex.svg?branch=master)](https://travis-ci.com/david63/announceonindex)
+[![Build Status](https://github.com/david63/announceonindex/workflows/Tests/badge.svg)](https://github.com/phpbb-extensions/david63/announceonindex)
 [![License](https://poser.pugx.org/david63/announceonindex/license)](https://packagist.org/packages/david63/announceonindex)
 [![Latest Stable Version](https://poser.pugx.org/david63/announceonindex/v/stable)](https://packagist.org/packages/david63/announceonindex)
 [![Latest Unstable Version](https://poser.pugx.org/david63/announceonindex/v/unstable)](https://packagist.org/packages/david63/announceonindex)
 [![Total Downloads](https://poser.pugx.org/david63/announceonindex/downloads)](https://packagist.org/packages/david63/announceonindex)
+[![codecov](https://codecov.io/gh/david63/announceonindex/branch/master/graph/badge.svg?token=D2500PgRex)](https://codecov.io/gh/david63/announceonindex)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/59902be2665c476dbd7951858c9ff769)](https://www.codacy.com/manual/david63/announceonindex?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=david63/announceonindex&amp;utm_campaign=Badge_Grade)
 
  [![Compatible](https://img.shields.io/badge/compatible-phpBB:3.2.x-blue.svg)](https://shields.io/)
@@ -23,7 +24,7 @@ Displays announcements on the index page.
 4. Look for `Announcements on index` under the Disabled Extensions list and click its `Enable` link.
 
 ## Usage
-1. Navigate in the ACP to `Extensions -> EAnnouncements on index -> Manage announcements`.
+1. Navigate in the ACP to `Extensions -> Announcements on index -> Manage announcements`.
 2. Apply the settings that you require.
 
 ## Uninstall

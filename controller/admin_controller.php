@@ -52,14 +52,14 @@ class admin_controller
 	/**
 	* Constructor for admin controller
 	*
-	* @param \phpbb\config\config					$config				Config object
-	* @param \phpbb\request\request					$request			Request object
-	* @param \phpbb\template\template				$template			Template object
-	* @param \phpbb\user							$user				User object
-	* @param \phpbb\language\language				$language			Language object
-	* @param \phpbb\log\log							$log				Log object
-	* @param \david63\creditspage\core\functions	functions			Functions for the extension
-	* @param string                                 $ext_images_path    Path to this extension's images
+	* @param \phpbb\config\config						$config				Config object
+	* @param \phpbb\request\request						$request			Request object
+	* @param \phpbb\template\template					$template			Template object
+	* @param \phpbb\user								$user				User object
+	* @param \phpbb\language\language					$language			Language object
+	* @param \phpbb\log\log								$log				Log object
+	* @param \david63\announceonindex\core\functions	functions			Functions for the extension
+	* @param string                                 	$ext_images_path    Path to this extension's images
 	*
 	* @return \david63\announceonindex\controller\admin_controller
 	* @access public

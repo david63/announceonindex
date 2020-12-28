@@ -64,19 +64,19 @@ class main_controller
 	/**
 	* Constructor for listener
 	*
-	* @param \phpbb\config\config					$config		Config object
-	* @param \phpbb\template\template\template		$template	Template object
-	* @param \phpbb\user                			$user		User object
-	* @param \phpbb\db\driver\driver_interface		$db			The db connection
-	* @param string 								$root_path
-	* @param string 								$php_ext
-	* @param \phpbb\content_visibility 				$content_visibility
-	* @param \phpbb\auth\auth 						$auth
-	* @param \phpbb\cache\service					$cache
-	* @param \phpbb\path_helper						$path_helper	phpBB path helper
-	* @param \phpbb\language\language				$language
-	* @param \david63\creditspage\core\functions	functions	Functions for the extension
-	* @param array									$tables			phpBB db tables
+	* @param \phpbb\config\config						$config		Config object
+	* @param \phpbb\template\template\template			$template	Template object
+	* @param \phpbb\user                				$user		User object
+	* @param \phpbb\db\driver\driver_interface			$db			The db connection
+	* @param string 									$root_path
+	* @param string 									$php_ext
+	* @param \phpbb\content_visibility 					$content_visibility
+	* @param \phpbb\auth\auth 							$auth
+	* @param \phpbb\cache\service						$cache
+	* @param \phpbb\path_helper							$path_helper	phpBB path helper
+	* @param \phpbb\language\language					$language
+	* @param \david63\announceonindex\core\functions	functions	Functions for the extension
+	* @param array										$tables			phpBB db tables
 	*
 	* @return \david63\announceonindex\controller\main_controller
 	* @access public
