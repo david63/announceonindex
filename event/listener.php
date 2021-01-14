@@ -21,13 +21,13 @@ use david63\announceonindex\controller\main_controller;
 */
 class listener implements EventSubscriberInterface
 {
-	/** @var \david63\announceonindex\controller\main_controller */
+	/** @var main_controller */
 	protected $indexoutput;
 
 	/**
 	* Constructor for listener
 	*
-	* @param \david63\announceonindex\controller\main_controller	$main_controller	Main controller
+	* @param main_controller	$main_controller	Main controller
 	*
 	* @access public
 	*/

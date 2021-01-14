@@ -22,16 +22,16 @@ use david63\announceonindex\core\functions;
 
 class main_controller
 {
-	/** @var \phpbb\config\config */
+	/** @var config */
 	protected $config;
 
-	/** @var \phpbb\template\template\template */
+	/** @var template */
 	protected $template;
 
-	/** @var \phpbb\user */
+	/** @var user */
 	protected $user;
 
-	/** @var \phpbb\db\driver\driver_interface */
+	/** @var driver_interface */
 	protected $db;
 
 	/** @var string phpBB root path */
@@ -40,22 +40,22 @@ class main_controller
 	/** @var string PHP extension */
 	protected $phpEx;
 
-	/** @var \phpbb\content_visibility */
+	/** @var content_visibility */
 	protected $content_visibility;
 
-	/** @var \phpbb\auth\auth */
+	/** @var auth */
 	protected $auth;
 
-	/** @var \phpbb\cache\service */
+	/** @var service */
 	protected $cache;
 
-	/** @var \phpbb\path_helper */
+	/** @var path_helper */
 	protected $path_helper;
 
-	/** @var \phpbb\language\language */
+	/** @var language */
 	protected $language;
 
-	/** @var \david63\announceonindex\core\functions */
+	/** @var functions */
 	protected $functions;
 
 	/** @var string custom tables */
@@ -64,19 +64,19 @@ class main_controller
 	/**
 	* Constructor for listener
 	*
-	* @param \phpbb\config\config						$config		Config object
-	* @param \phpbb\template\template\template			$template	Template object
-	* @param \phpbb\user                				$user		User object
-	* @param \phpbb\db\driver\driver_interface			$db			The db connection
-	* @param string 									$root_path
-	* @param string 									$php_ext
-	* @param \phpbb\content_visibility 					$content_visibility
-	* @param \phpbb\auth\auth 							$auth
-	* @param \phpbb\cache\service						$cache
-	* @param \phpbb\path_helper							$path_helper	phpBB path helper
-	* @param \phpbb\language\language					$language
-	* @param \david63\announceonindex\core\functions	functions	Functions for the extension
-	* @param array										$tables			phpBB db tables
+	* @param config					$config		Config object
+	* @param template				$template	Template object
+	* @param user                	$user		User object
+	* @param driver_interface		$db			The db connection
+	* @param string 				$root_path
+	* @param string 				$php_ext
+	* @param content_visibility 	$content_visibility
+	* @param auth 					$auth
+	* @param service				$cache
+	* @param path_helper			$path_helper	phpBB path helper
+	* @param language				$language
+	* @param functions				$functions		Functions for the extension
+	* @param array					$tables			phpBB db tables
 	*
 	* @return \david63\announceonindex\controller\main_controller
 	* @access public
