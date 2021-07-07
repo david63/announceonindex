@@ -134,7 +134,7 @@ class main_controller
 				FROM ' . $this->tables['forums'] . '
 				WHERE forum_type = ' . FORUM_POST;
 
-			if (is_array($forum_ary))
+			if (is_array($forum_ary) && count($forum_ary))
 			{
 				$sql .= ' AND ' . $this->db->sql_in_set('forum_id', $forum_ary, false);
 			}
